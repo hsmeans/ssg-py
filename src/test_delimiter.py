@@ -1,13 +1,3 @@
-import os, sys, inspect
-
-current_dir = os.path.dirname(
-    os.path.abspath(
-        inspect.getfile(inspect.currentframe())  # pyright: ignore[reportArgumentType]
-    )
-)
-parent_dir = os.path.dirname(current_dir)
-sys.path.insert(0, parent_dir)
-
 import unittest
 from textnode import TextNode, TextType, text_node_to_html_node
 from delimiter import split_nodes_delimiter
