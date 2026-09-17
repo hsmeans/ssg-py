@@ -1,5 +1,6 @@
 from enum import Enum
 
+from htmlnode import HTMLNode
 from leafnode import LeafNode
 
 

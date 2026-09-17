@@ -8,7 +8,8 @@ class LeafNode(HTMLNode):
     def to_html(self) -> str:
         if not self.value:
             raise ValueError("value required for leaf node")
-
+        if not self.tag:
+            return self.value
         return f"<{self.tag}>{self.value}</{self.tag}>"
 
     def __repr__(self) -> str:
