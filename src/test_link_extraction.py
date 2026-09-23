@@ -5,18 +5,18 @@ from link_extraction import extract_markdown_images, extract_markdown_links
 
 class TestExtractLink(unittest.TestCase):
     def test_valid(self):
-        text = "This is text with a link [to boot dev](https://www.example.com) and [to youtube](https://www.youtube.com/@bootdotdev)"
+        text = "This is text with a link [to site](https://www.example.com) and [to youtube](https://www.youtube.com/)"
         matches = extract_markdown_links(text)
         self.assertEqual(
             matches,
             [
-                ("to boot dev", "https://www.example.com"),
-                ("to youtube", "https://www.youtube.com/@bootdotdev"),
+                ("to site", "https://www.example.com"),
+                ("to youtube", "https://www.youtube.com/"),
             ],
         )
 
     def test_invalid(self):
-        text = "This is text without a valid link [to boot dev]https://www.example.com) or [to youtube(https://www.youtube.com/@bootdotdev)"
+        text = "This is text without a valid link [to site]https://www.example.com) or [to youtube(https://www.youtube.com/)"
         matches = extract_markdown_links(text)
         self.assertEqual(
             matches,
