@@ -4,7 +4,7 @@ import os
 import shutil
 
 STATIC_DIR = "static/"
-PUBLIC_DIR = "public/"
+PUBLIC_DIR = "docs/"
 
 
 def build_file(file: str, public_pwd: str):
